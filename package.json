@@ -1,0 +1,13 @@
+{
+  "name": "tc-downloader",
+  "description": "",
+  "version": "1.0.0",
+  "author": {
+    "name": "Mauricio Gentile",
+    "email": "info@nodejitsu.com"
+  },
+  "dependencies": {
+    "nconf": "0.6.7"
+  },
+  "main": "index"
+}
