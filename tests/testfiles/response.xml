@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/">
+  <title>Successful builds of 6 build configurations.</title>
+  <link rel="alternate" href="http://mgentile.idb.iadb.org:8080" />
+  <subtitle>Successful builds of [WFE :: Release {id=bt3}, Participants :: Release {id=bt4}, Logistic :: Release {id=bt5}, Participants :: Debug {id=bt6}, PrinterProcess :: Release {id=bt7}, BaseProject :: Release {id=bt8}] build configuration(s) of TeamCity server at http://mgentile.idb.iadb.org:8080. (no more then 100 items, only for items since Mar 14, 2013)</subtitle>
+  <updated>2013-03-19T21:03:53Z</updated>
+  <dc:creator>TeamCity server</dc:creator>
+  <dc:date>2013-03-19T21:03:53Z</dc:date>
+  <entry>
+    <title>Build BaseProject::Release #16 SVN 164 was successful</title>
+    <link rel="alternate" href="http://mgentile.idb.iadb.org:8080/viewLog.html?buildId=294&buildTypeId=bt8" />
+    <author>
+      <name>Successful Build</name>
+    </author>
+    <updated>2013-03-18T16:57:10Z</updated>
+    <published>2013-03-18T16:57:10Z</published>
+    <summary type="html">Status: <strong>;Success</strong>;<br/>
+Finished on: <strong>;Mar 18, 2013 12:57:10 PM</strong>;<br/>
+Changes in the build: none<br/>
+Agent: <strong>;MGENTILE</strong>;<br/>
+
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildLog&buildId=294&buildTypeId=bt8">;Build log</a>;</summary>
+    <dc:creator>Successful Build</dc:creator>
+    <dc:date>2013-03-18T16:57:10Z</dc:date>
+  </entry>
+  <entry>
+    <title>Build Participants::Release #52 SVN #285 was successful</title>
+    <link rel="alternate" href="http://mgentile.idb.iadb.org:8080/viewLog.html?buildId=293&buildTypeId=bt4" />
+    <author>
+      <name>Successful Build</name>
+    </author>
+    <updated>2013-03-18T16:37:04Z</updated>
+    <published>2013-03-18T16:37:04Z</published>
+    <summary type="html">Status: <strong>;Success</strong>;<br/>
+Finished on: <strong>;Mar 18, 2013 12:37:04 PM</strong>;<br/>
+Changes in the build: 
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildChangesDiv&buildId=293&buildTypeId=bt4">;2</a>
+by 
+hcidb
+<br/>
+Agent: <strong>;MGENTILE</strong>;<br/>
+
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildLog&buildId=293&buildTypeId=bt4">;Build log</a>;</summary>
+    <dc:creator>Successful Build</dc:creator>
+    <dc:date>2013-03-18T16:37:04Z</dc:date>
+  </entry>
+  <entry>
+    <title>Build Participants::Debug #67 SVN #285 was successful</title>
+    <link rel="alternate" href="http://mgentile.idb.iadb.org:8080/viewLog.html?buildId=292&buildTypeId=bt6" />
+    <author>
+      <name>Successful Build</name>
+    </author>
+    <updated>2013-03-17T17:50:33Z</updated>
+    <published>2013-03-17T17:50:33Z</published>
+    <summary type="html">Status: <strong>;Success</strong>;<br/>
+Finished on: <strong>;Mar 17, 2013 1:50:33 PM</strong>;<br/>
+Changes in the build: 
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildChangesDiv&buildId=292&buildTypeId=bt6">;1</a>
+by 
+hcidb
+<br/>
+Agent: <strong>;MGENTILE</strong>;<br/>
+
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildLog&buildId=292&buildTypeId=bt6">;Build log</a>;</summary>
+    <dc:creator>Successful Build</dc:creator>
+    <dc:date>2013-03-17T17:50:33Z</dc:date>
+  </entry>
+  <entry>
+    <title>Build Participants::Debug #66 SVN #284 was successful</title>
+    <link rel="alternate" href="http://mgentile.idb.iadb.org:8080/viewLog.html?buildId=291&buildTypeId=bt6" />
+    <author>
+      <name>Successful Build</name>
+    </author>
+    <updated>2013-03-17T16:18:26Z</updated>
+    <published>2013-03-17T16:18:26Z</published>
+    <summary type="html">Status: <strong>;Success</strong>;<br/>
+Finished on: <strong>;Mar 17, 2013 12:18:26 PM</strong>;<br/>
+Changes in the build: 
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildChangesDiv&buildId=291&buildTypeId=bt6">;1</a>
+by 
+hcidb
+<br/>
+Agent: <strong>;MGENTILE</strong>;<br/>
+
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildLog&buildId=291&buildTypeId=bt6">;Build log</a>;</summary>
+    <dc:creator>Successful Build</dc:creator>
+    <dc:date>2013-03-17T16:18:26Z</dc:date>
+  </entry>
+  <entry>
+    <title>Build BaseProject::Release #15 SVN 164 was successful</title>
+    <link rel="alternate" href="http://mgentile.idb.iadb.org:8080/viewLog.html?buildId=290&buildTypeId=bt8" />
+    <author>
+      <name>Successful Build</name>
+    </author>
+    <updated>2013-03-17T15:44:39Z</updated>
+    <published>2013-03-17T15:44:39Z</published>
+    <summary type="html">Status: <strong>;Success</strong>;<br/>
+Finished on: <strong>;Mar 17, 2013 11:44:39 AM</strong>;<br/>
+Changes in the build: 
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildChangesDiv&buildId=290&buildTypeId=bt8">;1</a>
+by 
+hcidb
+<br/>
+Agent: <strong>;MGENTILE</strong>;<br/>
+
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildLog&buildId=290&buildTypeId=bt8">;Build log</a>;</summary>
+    <dc:creator>Successful Build</dc:creator>
+    <dc:date>2013-03-17T15:44:39Z</dc:date>
+  </entry>
+  <entry>
+    <title>Build Participants::Release #51 SVN #283 was successful</title>
+    <link rel="alternate" href="http://mgentile.idb.iadb.org:8080/viewLog.html?buildId=289&buildTypeId=bt4" />
+    <author>
+      <name>Successful Build</name>
+    </author>
+    <updated>2013-03-17T15:25:32Z</updated>
+    <published>2013-03-17T15:25:32Z</published>
+    <summary type="html">Status: <strong>;Success</strong>;<br/>
+Finished on: <strong>;Mar 17, 2013 11:25:32 AM</strong>;<br/>
+Changes in the build: 
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildChangesDiv&buildId=289&buildTypeId=bt4">;12</a>
+by 
+hcidb, 
+
+mgentile
+<br/>
+Agent: <strong>;MGENTILE</strong>;<br/>
+
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildLog&buildId=289&buildTypeId=bt4">;Build log</a>;</summary>
+    <dc:creator>Successful Build</dc:creator>
+    <dc:date>2013-03-17T15:25:32Z</dc:date>
+  </entry>
+  <entry>
+    <title>Build Participants::Debug #65 SVN #283 was successful</title>
+    <link rel="alternate" href="http://mgentile.idb.iadb.org:8080/viewLog.html?buildId=288&buildTypeId=bt6" />
+    <author>
+      <name>Successful Build</name>
+    </author>
+    <updated>2013-03-17T15:25:12Z</updated>
+    <published>2013-03-17T15:25:12Z</published>
+    <summary type="html">Status: <strong>;Success</strong>;<br/>
+Finished on: <strong>;Mar 17, 2013 11:25:12 AM</strong>;<br/>
+Changes in the build: 
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildChangesDiv&buildId=288&buildTypeId=bt6">;1</a>
+by 
+mgentile
+<br/>
+Agent: <strong>;MGENTILE</strong>;<br/>
+
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildLog&buildId=288&buildTypeId=bt6">;Build log</a>;</summary>
+    <dc:creator>Successful Build</dc:creator>
+    <dc:date>2013-03-17T15:25:12Z</dc:date>
+  </entry>
+  <entry>
+    <title>Build Participants::Debug #64 SVN #282 was successful</title>
+    <link rel="alternate" href="http://mgentile.idb.iadb.org:8080/viewLog.html?buildId=287&buildTypeId=bt6" />
+    <author>
+      <name>Successful Build</name>
+    </author>
+    <updated>2013-03-16T16:36:21Z</updated>
+    <published>2013-03-16T16:36:21Z</published>
+    <summary type="html">Status: <strong>;Success</strong>;<br/>
+Finished on: <strong>;Mar 16, 2013 12:36:21 PM</strong>;<br/>
+Changes in the build: 
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildChangesDiv&buildId=287&buildTypeId=bt6">;1</a>
+by 
+hcidb
+<br/>
+Agent: <strong>;MGENTILE</strong>;<br/>
+
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildLog&buildId=287&buildTypeId=bt6">;Build log</a>;</summary>
+    <dc:creator>Successful Build</dc:creator>
+    <dc:date>2013-03-16T16:36:21Z</dc:date>
+  </entry>
+  <entry>
+    <title>Build Participants::Debug #63 SVN #281 was successful</title>
+    <link rel="alternate" href="http://mgentile.idb.iadb.org:8080/viewLog.html?buildId=286&buildTypeId=bt6" />
+    <author>
+      <name>Successful Build</name>
+    </author>
+    <updated>2013-03-16T13:21:23Z</updated>
+    <published>2013-03-16T13:21:23Z</published>
+    <summary type="html">Status: <strong>;Success</strong>;<br/>
+Finished on: <strong>;Mar 16, 2013 9:21:23 AM</strong>;<br/>
+Changes in the build: 
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildChangesDiv&buildId=286&buildTypeId=bt6">;1</a>
+by 
+hcidb
+<br/>
+Agent: <strong>;MGENTILE</strong>;<br/>
+
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildLog&buildId=286&buildTypeId=bt6">;Build log</a>;</summary>
+    <dc:creator>Successful Build</dc:creator>
+    <dc:date>2013-03-16T13:21:23Z</dc:date>
+  </entry>
+  <entry>
+    <title>Build Participants::Debug #62 SVN #280 was successful</title>
+    <link rel="alternate" href="http://mgentile.idb.iadb.org:8080/viewLog.html?buildId=285&buildTypeId=bt6" />
+    <author>
+      <name>Successful Build</name>
+    </author>
+    <updated>2013-03-15T21:25:08Z</updated>
+    <published>2013-03-15T21:25:08Z</published>
+    <summary type="html">Status: <strong>;Success</strong>;<br/>
+Finished on: <strong>;Mar 15, 2013 5:25:08 PM</strong>;<br/>
+Changes in the build: 
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildChangesDiv&buildId=285&buildTypeId=bt6">;1</a>
+by 
+hcidb
+<br/>
+Agent: <strong>;MGENTILE</strong>;<br/>
+
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildLog&buildId=285&buildTypeId=bt6">;Build log</a>;</summary>
+    <dc:creator>Successful Build</dc:creator>
+    <dc:date>2013-03-15T21:25:08Z</dc:date>
+  </entry>
+  <entry>
+    <title>Build Participants::Debug #61 SVN #279 was successful</title>
+    <link rel="alternate" href="http://mgentile.idb.iadb.org:8080/viewLog.html?buildId=284&buildTypeId=bt6" />
+    <author>
+      <name>Successful Build</name>
+    </author>
+    <updated>2013-03-15T21:16:55Z</updated>
+    <published>2013-03-15T21:16:55Z</published>
+    <summary type="html">Status: <strong>;Success</strong>;<br/>
+Finished on: <strong>;Mar 15, 2013 5:16:55 PM</strong>;<br/>
+Changes in the build: 
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildChangesDiv&buildId=284&buildTypeId=bt6">;1</a>
+by 
+hcidb
+<br/>
+Agent: <strong>;MGENTILE</strong>;<br/>
+
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildLog&buildId=284&buildTypeId=bt6">;Build log</a>;</summary>
+    <dc:creator>Successful Build</dc:creator>
+    <dc:date>2013-03-15T21:16:55Z</dc:date>
+  </entry>
+  <entry>
+    <title>Build Logistic::Release #77 SVN 278 was successful</title>
+    <link rel="alternate" href="http://mgentile.idb.iadb.org:8080/viewLog.html?buildId=283&buildTypeId=bt5" />
+    <author>
+      <name>Successful Build</name>
+    </author>
+    <updated>2013-03-15T20:53:46Z</updated>
+    <published>2013-03-15T20:53:46Z</published>
+    <summary type="html">Status: <strong>;Success</strong>;<br/>
+Finished on: <strong>;Mar 15, 2013 4:53:46 PM</strong>;<br/>
+Changes in the build: 
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildChangesDiv&buildId=283&buildTypeId=bt5">;1</a>
+by 
+hcidb
+<br/>
+Agent: <strong>;MGENTILE</strong>;<br/>
+
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildLog&buildId=283&buildTypeId=bt5">;Build log</a>;</summary>
+    <dc:creator>Successful Build</dc:creator>
+    <dc:date>2013-03-15T20:53:46Z</dc:date>
+  </entry>
+  <entry>
+    <title>Build Participants::Debug #60 SVN #277 was successful</title>
+    <link rel="alternate" href="http://mgentile.idb.iadb.org:8080/viewLog.html?buildId=282&buildTypeId=bt6" />
+    <author>
+      <name>Successful Build</name>
+    </author>
+    <updated>2013-03-15T14:21:34Z</updated>
+    <published>2013-03-15T14:21:34Z</published>
+    <summary type="html">Status: <strong>;Success</strong>;<br/>
+Finished on: <strong>;Mar 15, 2013 10:21:34 AM</strong>;<br/>
+Changes in the build: 
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildChangesDiv&buildId=282&buildTypeId=bt6">;1</a>
+by 
+hcidb
+<br/>
+Agent: <strong>;MGENTILE</strong>;<br/>
+
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildLog&buildId=282&buildTypeId=bt6">;Build log</a>;</summary>
+    <dc:creator>Successful Build</dc:creator>
+    <dc:date>2013-03-15T14:21:34Z</dc:date>
+  </entry>
+  <entry>
+    <title>Build Logistic::Release #76 SVN 276 was successful</title>
+    <link rel="alternate" href="http://mgentile.idb.iadb.org:8080/viewLog.html?buildId=281&buildTypeId=bt5" />
+    <author>
+      <name>Successful Build</name>
+    </author>
+    <updated>2013-03-15T14:20:24Z</updated>
+    <published>2013-03-15T14:20:24Z</published>
+    <summary type="html">Status: <strong>;Success</strong>;<br/>
+Finished on: <strong>;Mar 15, 2013 10:20:24 AM</strong>;<br/>
+Changes in the build: 
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildChangesDiv&buildId=281&buildTypeId=bt5">;1</a>
+by 
+hcidb
+<br/>
+Agent: <strong>;MGENTILE</strong>;<br/>
+
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildLog&buildId=281&buildTypeId=bt5">;Build log</a>;</summary>
+    <dc:creator>Successful Build</dc:creator>
+    <dc:date>2013-03-15T14:20:24Z</dc:date>
+  </entry>
+  <entry>
+    <title>Build Participants::Debug #59 SVN #275 was successful</title>
+    <link rel="alternate" href="http://mgentile.idb.iadb.org:8080/viewLog.html?buildId=280&buildTypeId=bt6" />
+    <author>
+      <name>Successful Build</name>
+    </author>
+    <updated>2013-03-14T23:37:28Z</updated>
+    <published>2013-03-14T23:37:28Z</published>
+    <summary type="html">Status: <strong>;Success</strong>;<br/>
+Finished on: <strong>;Mar 14, 2013 7:37:28 PM</strong>;<br/>
+Changes in the build: 
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildChangesDiv&buildId=280&buildTypeId=bt6">;1</a>
+by 
+hcidb
+<br/>
+Agent: <strong>;MGENTILE</strong>;<br/>
+
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildLog&buildId=280&buildTypeId=bt6">;Build log</a>;</summary>
+    <dc:creator>Successful Build</dc:creator>
+    <dc:date>2013-03-14T23:37:28Z</dc:date>
+  </entry>
+  <entry>
+    <title>Build BaseProject::Release #14 SVN 163 was successful</title>
+    <link rel="alternate" href="http://mgentile.idb.iadb.org:8080/viewLog.html?buildId=279&buildTypeId=bt8" />
+    <author>
+      <name>Successful Build</name>
+    </author>
+    <updated>2013-03-14T23:18:37Z</updated>
+    <published>2013-03-14T23:18:37Z</published>
+    <summary type="html">Status: <strong>;Success</strong>;<br/>
+Finished on: <strong>;Mar 14, 2013 7:18:37 PM</strong>;<br/>
+Changes in the build: 
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildChangesDiv&buildId=279&buildTypeId=bt8">;1</a>
+by 
+hcidb
+<br/>
+Agent: <strong>;MGENTILE</strong>;<br/>
+
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildLog&buildId=279&buildTypeId=bt8">;Build log</a>;</summary>
+    <dc:creator>Successful Build</dc:creator>
+    <dc:date>2013-03-14T23:18:37Z</dc:date>
+  </entry>
+  <entry>
+    <title>Build Logistic::Release #75 SVN 274 was successful</title>
+    <link rel="alternate" href="http://mgentile.idb.iadb.org:8080/viewLog.html?buildId=278&buildTypeId=bt5" />
+    <author>
+      <name>Successful Build</name>
+    </author>
+    <updated>2013-03-14T21:59:17Z</updated>
+    <published>2013-03-14T21:59:17Z</published>
+    <summary type="html">Status: <strong>;Success</strong>;<br/>
+Finished on: <strong>;Mar 14, 2013 5:59:17 PM</strong>;<br/>
+Changes in the build: 
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildChangesDiv&buildId=278&buildTypeId=bt5">;1</a>
+by 
+hcidb
+<br/>
+Agent: <strong>;MGENTILE</strong>;<br/>
+
+<a href="http://mgentile.idb.iadb.org:8080/viewLog.html?tab=buildLog&buildId=278&buildTypeId=bt5">;Build log</a>;</summary>
+    <dc:creator>Successful Build</dc:creator>
+    <dc:date>2013-03-14T21:59:17Z</dc:date>
+  </entry>
+</feed>
