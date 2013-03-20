@@ -38,11 +38,15 @@ downloader.start();
 downloader.stop();
 ```
 
-##With windser:
+##Deploy with windser (Windows Service):
 
 ```bash
+npm install winser -g
 npm run-script install-windows-service
 ```
+
+###More info here:
+http://jfromaniello.github.com/winser/
 
 ###package.json
 ```js
