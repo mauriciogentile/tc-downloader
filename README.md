@@ -45,13 +45,12 @@ npm install winser -g
 npm run-script install-windows-service
 ```
 
-###More info here:
-http://jfromaniello.github.com/winser/
-
-###package.json
+####package.json
 ```js
   "scripts": {
     "install-windows-service": "winser -i",
     "uninstall-windows-service": "winser -r"
   },
 ```
+####More info here:
+http://jfromaniello.github.com/winser/
