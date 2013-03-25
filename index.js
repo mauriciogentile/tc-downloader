@@ -11,7 +11,7 @@ var EventEmitter = new require("events").EventEmitter;
 var downloadHistoryFilePath = "./downloadHistory.txt";
 var downloadHistory = [];
 var config;
-var intervalId = 0;
+var timeoutId = 0;
 var ready = false;
 
 var events = {
@@ -27,7 +27,7 @@ var Downloader = function() {
 
 	EventEmitter.call(self);
 	
-	var _loadHistory = function() {
+	var loadHistory = function() {
 		fs.exists(downloadHistoryFilePath, function(exists) {
 			if(!exists) return;
 			new lazy(fs.createReadStream(downloadHistoryFilePath)).lines.forEach(function(line) {
@@ -36,13 +36,13 @@ var Downloader = function() {
 		});
 	};
 
-	var _initFolders = function() {
+	var initFolders = function() {
 		if(!fs.existsSync(config.downloadFolder)) {
 			fs.mkdir(config.downloadFolder);
 		}
 	};
 
-	var _loadConfig = function() {
+	var loadConfig = function() {
 		var confFile = "./config/config.json";
 		if (!fs.existsSync(confFile)) {
 			throw "File '" + confFile + "' was not found!";
@@ -54,7 +54,7 @@ var Downloader = function() {
 		config.downloadFolder = nconf.get("downloadFolder");	
 	};
 
-	var _startDownload = function() {
+	var startDownload = function() {
 		var options = {
 			hostname: config.teamcity.hostName,
 			port: config.teamcity.hostPort,
@@ -62,7 +62,7 @@ var Downloader = function() {
 			param: config.teamcity.feedParams
 		};
 
-		var _download = function(options) {
+		var download = function() {
 			var request = http.get(options, function(response) {
 				if(response.statusCode !== 200) {
 					self.emit(events.onError, "problem getting feed from " + options.hostname + ". Status code is: " + response.statusCode);
@@ -85,7 +85,7 @@ var Downloader = function() {
 			    	parseString(data, {trim: true}, function (err, result) {
 			    		result.feed.entry.forEach(function(entry) {
 			    			var buildUrl = entry.link[0].$.href;
-			    			_downloadArtifact(config, buildUrl);
+			    			downloadArtifact(config, buildUrl);
 			    		});
 			  		});
 			  	});
@@ -96,50 +96,45 @@ var Downloader = function() {
 			});
 
 			request.end();
+
+			timeoutId = setTimeout(download, config.retryIntervalSeconds * 1000);
 		};
 
-		_download(options);
-		_startDownloadInterval(function() { _download(options); });
+		download();
 	};
 
-	var _startDownloadInterval = function(call) {
-		intervalId = setInterval(call, config.retryIntervalSeconds * 1000);
-	};
-
-	var _downloadArtifact = function(conf, buildUrl) {
+	var downloadArtifact = function(conf, buildUrl) {
 		var parsedBuildUrl = url.parse(buildUrl);
 		var query = querystring.parse(parsedBuildUrl.query);
 		var artifactPath = config.teamcity.artifactZipPath + query.buildTypeId + "/" + query.buildId + ":id/artifacts.zip";
 
-		if(downloadHistory.indexOf(artifactPath) >= 0) {
-			return;
+		if(downloadHistory.indexOf(artifactPath) === -1) {
+			var artifactUrl = parsedBuildUrl.protocol + "//" + config.teamcity.username + ":" + config.teamcity.password + "@" +
+				parsedBuildUrl.hostname + ":" + parsedBuildUrl.port + "/" + artifactPath;
+
+			var request = http.get(artifactUrl, function(response) {
+				try {
+					var contentDisp = response.headers["content-disposition"];
+					var fileName = contentDisp.split(";")[1].split("=")[1].replace("\"", "").replace("\"", "");
+					var file = fs.createWriteStream(config.downloadFolder + fileName);
+					response.pipe(file);
+					updateDwnloadHistory(artifactPath);
+					self.emit(events.onFileDownloaded, file.path);
+				}
+				catch(e) {
+					self.emit(events.onError, "problem downloading file: " + e.message);
+				}
+			});
+			
+			request.on("error", function(e) {
+			  self.emit(events.onError, "problem downloading file: " + e.message);
+			});
+
+			request.end();
 		}
-
-		var artifactUrl = parsedBuildUrl.protocol + "//" + config.teamcity.username + ":" + config.teamcity.password + "@" +
-			parsedBuildUrl.hostname + ":" + parsedBuildUrl.port + "/" + artifactPath;
-
-		var request = http.get(artifactUrl, function(response) {
-			try {
-				var contentDisp = response.headers["content-disposition"];
-				var fileName = contentDisp.split(";")[1].split("=")[1].replace("\"", "").replace("\"", "");
-				var file = fs.createWriteStream(config.downloadFolder + fileName);
-				response.pipe(file);
-				_updateDwnloadHistory(artifactPath);
-				self.emit(events.onFileDownloaded, file.path);
-			}
-			catch(e) {
-				self.emit(events.onError, "problem downloading file: " + e.message);
-			}
-		});
-		
-		request.on("error", function(e) {
-		  self.emit(events.onError, "problem downloading file: " + e.message);
-		});
-
-		request.end();
 	};
 
-	var _updateDwnloadHistory = function(artifactPath) {
+	var updateDwnloadHistory = function(artifactPath) {
 		downloadHistory.push(artifactPath);
 		fs.appendFile(downloadHistoryFilePath, artifactPath + "\r\n", function (err) {
 			if (err) {
@@ -151,23 +146,23 @@ var Downloader = function() {
 	self.init = function(conf) {
 		config = conf;
 		if(!config) {
-			_loadConfig();
+			loadConfig();
 		}
-		_loadHistory();
-		_initFolders();
+		loadHistory();
+		initFolders();
 		self.emit(events.onReady);
 	};
 	
 	self.start = function(callback) {
-		_startDownload();
+		startDownload();
 		self.emit(events.onStarted);
 	};
 	
 	self.stop = function(callback) {
-		if(intervalId === 0) {
+		if(timeoutId === 0) {
 			return;
 		}
-		clearInterval(intervalId);
+		clearInterval(timeoutId);
 		self.emit(events.onStopped);
 	};
 };
