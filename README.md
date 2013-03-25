@@ -30,10 +30,10 @@ downloader.start();
 downloader.stop();
 ```
 
-###tc-downloader inherits from EvenEmitter:
+###tc-downloader inherits from EventEmitter:
 
-```bash
-onReady, onStarted, onError, onStopped, onFileDownloaded
+```js
+"onReady", "onStarted", "onError", "onStopped", "onFileDownloaded"
 ```
 
 ```js
@@ -46,19 +46,10 @@ downloader.on("onFileDownloaded", function(file) {
 });
 ```
 
-##Deploy with windser (Windows Service):
+##Deploy with windser as a Windows Service:
+###(see http://jfromaniello.github.com/winser for more info)
 
 ```bash
 npm install winser -g
-npm run-script install-windows-service
+winser -i
 ```
-
-####package.json
-```js
-  "scripts": {
-    "install-windows-service": "winser -i",
-    "uninstall-windows-service": "winser -r"
-  },
-```
-####More info here:
-http://jfromaniello.github.com/winser/
