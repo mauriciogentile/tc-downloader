@@ -24,6 +24,19 @@ var config = {
 
 downloader.init(config);
 
+downloader.start();
+
+//and then stop it
+downloader.stop();
+```
+
+###tc-downloader inherits from EvenEmitter:
+
+```bash
+onReady, onStarted, onError, onStopped, onFileDownloaded
+```
+
+```js
 downloader.on("onError", function(err) {
 	console.log(err);
 });
@@ -31,11 +44,6 @@ downloader.on("onError", function(err) {
 downloader.on("onFileDownloaded", function(file) {
 	console.log(file);
 });
-
-downloader.start();
-
-//and then stop it
-downloader.stop();
 ```
 
 ##Deploy with windser (Windows Service):

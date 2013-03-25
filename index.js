@@ -3,7 +3,7 @@ var http = require("http");
 var fs = require("fs");
 var url = require("url");
 var nconf = require("nconf");
-var lazy = require("lazy");
+var lineReader = require("line-reader");
 var parseString = require("xml2js").parseString;
 var querystring = require("querystring");
 var EventEmitter = new require("events").EventEmitter;
@@ -13,6 +13,7 @@ var downloadHistory = [];
 var config;
 var timeoutId = 0;
 var ready = false;
+var initializing = false;
 
 var events = {
 	onError: "onError",
@@ -27,13 +28,19 @@ var Downloader = function() {
 
 	EventEmitter.call(self);
 	
-	var loadHistory = function() {
-		fs.exists(downloadHistoryFilePath, function(exists) {
-			if(!exists) return;
-			new lazy(fs.createReadStream(downloadHistoryFilePath)).lines.forEach(function(line) {
-		         downloadHistory.push(line.toString().replace("\r", ""));
-		    });
-		});
+	var loadHistory = function(cb) {
+		if(fs.existsSync(downloadHistoryFilePath)) {
+			lineReader.eachLine(downloadHistoryFilePath, function(line, last) {
+				downloadHistory.push(line.replace("\r", ""));
+				console.log(line);
+				if (last) {
+					cb();
+				}
+			});
+		}
+		else {
+			cb();
+		}
 	};
 
 	var initFolders = function() {
@@ -144,21 +151,33 @@ var Downloader = function() {
 	};
 
 	self.init = function(conf) {
+		initializing = true;
 		config = conf;
 		if(!config) {
 			loadConfig();
 		}
-		loadHistory();
 		initFolders();
-		self.emit(events.onReady);
+		loadHistory(function() {
+			ready = true;
+			self.emit(events.onReady);
+		});
 	};
 	
-	self.start = function(callback) {
+	self.start = function() {
+		if(!ready && !initializing) {
+			throw "'Init' method has not been called!";
+		}
+
+		while(!ready) {
+			setTimeout(self.start, 10);
+			return;
+		}
+
 		startDownload();
 		self.emit(events.onStarted);
 	};
 	
-	self.stop = function(callback) {
+	self.stop = function() {
 		if(timeoutId === 0) {
 			return;
 		}
