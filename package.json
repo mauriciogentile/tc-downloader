@@ -1,12 +1,12 @@
 {
   "name": "tc-downloader",
   "description": "",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "readme": "hi\n",
   "readmeFilename": "README.md",
   "author": {
     "name": "Mauricio Gentile",
-    "email": "info@nodejitsu.com"
+    "email": "gentilemauricio@gmail.com"
   },
   "dependencies": {
     "nconf": "0.6.7",
@@ -14,8 +14,6 @@
     "url": "~0.7.9",
     "http": "0.0.0",
     "xml2js": "~0.2.6",
-    "nodeunit": "~0.7.4",
-    "express": "~3.1.0",
     "line-reader": "~0.2.3"
   },
   "main": "index"
