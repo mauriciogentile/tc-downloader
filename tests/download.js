@@ -2,6 +2,7 @@ var assert = require("assert");
 var fs = require("fs");
 var http = require("http");
 var testUtil = require("../tests/lib/util");
+var sinon = require("sinon");
 
 var config = testUtil.config;
 
@@ -25,8 +26,8 @@ module.exports.tearDown = function(cb) {
 	cb();
 };
 
-module.exports.downloadFile = function(test) {
-	test.expect(1);
+module.exports["should download file to folder"] = function(test) {
+	test.expect(2);
 
 	var onStopped = function() {
 		downloader.removeListener("onStopped", onStopped);
@@ -34,12 +35,7 @@ module.exports.downloadFile = function(test) {
 		test.done();
 	};
 
-	var onError = function(msg) {
-		downloader.removeListener("onError", onError);
-		test.fail(msg);
-		downloader.stop();
-		test.done();
-	};
+	var onError = sinon.spy();
 
 	var downloader = require("../index.js");
 	downloader.init(config);
@@ -48,6 +44,7 @@ module.exports.downloadFile = function(test) {
 	downloader.start();
 	
 	setTimeout(function() {
+		test.ok(!onError.called, "onError not called");
 		downloader.stop();
 	}, 2000);
 };

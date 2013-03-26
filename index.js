@@ -12,13 +12,10 @@ var downloadHistoryFilePath = "./downloadHistory.txt";
 var downloadHistory = [];
 var config;
 var timeoutId = 0;
-var ready = false;
-var initializing = false;
 
 var events = {
 	onError: "onError",
 	onFileDownloaded: "onFileDownloaded",
-	onReady: "onReady",
 	onStopped: "onStopped",
 	onStarted: "onStarted"
 };
@@ -151,30 +148,18 @@ var Downloader = function() {
 	};
 
 	self.init = function(conf) {
-		initializing = true;
 		config = conf;
+	};
+	
+	self.start = function() {
 		if(!config) {
 			loadConfig();
 		}
 		initFolders();
 		loadHistory(function() {
-			ready = true;
-			self.emit(events.onReady);
+			startDownload();
+			self.emit(events.onStarted);
 		});
-	};
-	
-	self.start = function() {
-		if(!ready && !initializing) {
-			throw "'Init' method has not been called!";
-		}
-
-		while(!ready) {
-			setTimeout(self.start, 10);
-			return;
-		}
-
-		startDownload();
-		self.emit(events.onStarted);
 	};
 	
 	self.stop = function() {

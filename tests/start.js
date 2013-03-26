@@ -1,31 +1,28 @@
 var assert = require("assert");
 var http = require("http");
 var testUtil = require("../tests/lib/util");
+var sinon = require("sinon");
 
 var config = testUtil.config;
 
-http.get = testUtil.httpGetStub;
+module.exports["should start with no errors"] = function(test) {
+	http.get = testUtil.httpGetStub;
 
-module.exports.startTest = function(test) {
-	test.expect(1);
+	test.expect(2);
 
-	var onStarted = function() {
-		downloader.removeListener("onStarted", onStarted);
-		test.ok(true, "started");
-		downloader.stop();
-		test.done();
-	};
-
-	var onError = function() {
-		downloader.removeListener("onError", onError);
-		test.fail(msg);
-		downloader.stop();
-		test.done();
-	};
+	var onStarted = sinon.spy();
+	var onError = sinon.spy();
 
 	var downloader = require("../index.js");
 	downloader.init(config);
 	downloader.on("onStarted", onStarted);
 	downloader.on("onError", onError);
 	downloader.start();
+
+	test.ok(onStarted.called, "onStarted not called");
+	test.ok(!onError.called, "onError not called");
+
+	downloader.stop();
+
+	test.done();
 };

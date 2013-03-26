@@ -6,20 +6,20 @@ var config = testUtil.config;
 
 http.get = testUtil.httpGetStub;
 
-module.exports.startStopTest = function(test) {
+module.exports["should start & stop"] = function(test) {
 	var onStarted = function() {
-		downloader.removeListener("onStarted", onStarted);
+		//downloader.removeListener("onStarted", onStarted);
 		downloader.stop();
 	};
 
 	var onStopped = function() {
-		downloader.removeListener("onStopped", onStopped);
+		//downloader.removeListener("onStopped", onStopped);
 		test.ok(true, "stopped");
 		test.done();
 	};
 
 	var onError = function(msg) {
-		downloader.removeListener("onError", onError);
+		//downloader.removeListener("onError", onError);
 		test.fail(msg);
 		downloader.stop();
 		test.done();
