@@ -46,7 +46,7 @@ downloader.on("onFileDownloaded", function(file) {
 });
 ```
 
-##Deploy with windser as a Windows Service:
+##Deploy with winser as a Windows Service:
 ###(see http://jfromaniello.github.com/winser for more info)
 
 ```bash
