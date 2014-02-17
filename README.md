@@ -1,3 +1,6 @@
+##How does it work?
+### tc-downloader is a node.js service component that allows you to download packages (typically a zipped file) from your Team City server so you can have better and easier access to your packges.
+
 ##Installation
 ```bash
 npm install tc-downloader
